@@ -1,22 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="{{ route('categories.store') }}" method="post">
-        @csfr
-        <label for="category_name">Nombre categoria</label>
-        <input type="text" name="category_name" id="category_name" placeholder="category_name">
-        
-        <label for="active">Activa</label>   
-        <input type="checkbox" name="active" id="active" value="0">   
+@extends('layouts.app')
 
-        <button type="submit">Guardar</button>
+@section('content')
+    <h1>Crear Categoría</h1>
 
-          
-    </form> 
-</body>
-</html>
+
+    <form action="{{route('categories.store') }}" method="post">
+        @csrf
+        <div class="form group">
+            <div class="mb-3"
+                <label for="category_name" class="form-label">Nombre categoría</label>
+                <input type="text" name="category_name" id="category_name" placeholder="category Name">
+            </div>
+
+            <div class="mb-3">
+                <label for="active">Activa</label>
+                <input type="checkbox" name="active" id="active" value="0">
+            </div>
+        <button class="btn btn primary" type="submit">Guardar</button>
+        </div>
+    </form>
+@endsection
