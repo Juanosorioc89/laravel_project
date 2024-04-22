@@ -13,6 +13,8 @@ use App\Http\Controllers\CategoryController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::resource('categories', CategoryController::class);
+Route::resource('categories', PostController::class);
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +22,7 @@ Route::get('/', function () {
 
 Route::resource('categories', CategoryController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

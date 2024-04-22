@@ -24,8 +24,8 @@
                     @endif
                 </td>
                 <td>
-                    <a class="btn btn primary">Editar</a>
-                    <a class="btn btn primary">Eliminar</a>
+                    <a class="btn btn-primary">Editar</a>
+                    <a class="btn btn-primary">Eliminar</a>
                 </td>
             </tr>
         @endforeach

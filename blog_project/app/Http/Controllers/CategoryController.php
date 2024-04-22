@@ -39,7 +39,7 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('categories.show', compact ('category'));
     }
 
     /**
@@ -68,6 +68,7 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category->delete();
+        return redirect()->route('categories.index')->with('success', 'Category deleted successfully');
     }
 }
